@@ -1,7 +1,7 @@
 # turris
 
-Skripty a programy tykajici se Routeru Turris a Turris Omnia
+Skripty a programy tykajici se routeru Turris a Turris Omnia
 
-viz [https://www.turris.cz/]
+viz [Project:Turris](https://www.turris.cz/)
 
 
