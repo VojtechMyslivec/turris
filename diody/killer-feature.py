@@ -1,9 +1,9 @@
 #!/usr/bin/python
 # Script to achive simple Turris LED effects comfortably
-# 
-# autor: 
+#
+# autor:
 #               Vojtech Myslivec <vojtech@xmyslivec.cz>
-# inspired by: 
+# inspired by:
 #               CZ.NIC, z.s.p.o. [https://www.turris.cz/doc/navody/nastaveni_led_diod]
 #               Petr Holeček [http://www.ryu.cz/hardware/router-turris-ovladani-rgb-led/]
 #
@@ -27,7 +27,7 @@ signal.signal( signal.SIGINT, sigint_odchyt )
 
 usage = """USAGE:
     %s soubor.binmask...
-    
+
     soubor.binmask  Soubor obsahujici vzor pro rosviceni diod.
                     Na kazdem radku musi byt presne 8-bit cislo
                     ve dvojkove soustave.
@@ -47,7 +47,7 @@ barvy = [
             "00FF88",
             "00FFFF",
             "0088FF",
-            "0000FF", 
+            "0000FF",
             "8800FF",
             "FF00FF",
             "FF0088",
@@ -91,7 +91,7 @@ for arg in sys.argv:
             barva = ( barva + 1 ) % len(barvy)
 
             time.sleep( cekej )
-                            
+
 
 uklid()
 

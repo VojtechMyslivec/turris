@@ -87,7 +87,7 @@ is_writable_dir() {
 usage() {
     [ $# -eq 1 ] && {
         [ "$1" == "-h" -o "$1" == "--help" -o "$1" == "help" ] && {
-            echo "$USAGE" 
+            echo "$USAGE"
             exit 0
         }
     }
@@ -182,11 +182,11 @@ write_backup_timestamp_to_file() {
 }
 
 write_full_backup_timestamp() {
-    write_backup_timestamp_to_file "$last_full_backup_file" 
+    write_backup_timestamp_to_file "$last_full_backup_file"
 }
 
 write_increment_backup_timestamp() {
-    write_backup_timestamp_to_file "$last_increment_backup_file" 
+    write_backup_timestamp_to_file "$last_increment_backup_file"
 }
 
 # vrati prvni neexistujici mozne jmeno souboru '$1' s pripadnou prirazenou cislovkou
@@ -229,7 +229,7 @@ archive_old_backup() {
 
 remove_old_backup() {
     local dir=""
-     
+
     # vypise adresare s delimiterem
     #   a pote vyfiltruje 'full_backup_count-1' archivovanych zaloh
     ls -dt "${backup_dir}/${dir_prefix}${DELIMITER}"* 2> /dev/null \
