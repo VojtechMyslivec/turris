@@ -263,6 +263,9 @@ main() {
     # pokud je current_count 0, vytvari se plna zaloha -- archivuje
     [ "$current_count" -eq 0 ] && {
         archive_old_backup
+        # je nutne hned zmenit current count v souboru, jinak by po selhani
+        #    teto iterace znovu doslo k archivaci
+        write_current_count
     }
 
     # vytvori adresar pro zalohu, bude-li treba
