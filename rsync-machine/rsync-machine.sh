@@ -1,6 +1,8 @@
 #!/bin/bash
 # skonci s chybou pri pouziti neinicializovane promenne
 set -o nounset
+# neuspech prikazu zpusobi neuspech pipeline
+set -o pipefail
 # skonci s chybou v pripade, ze nejaky neodchyceny prikaz skonci s chybou
 #set -o errexit
 
@@ -242,13 +244,12 @@ remove_old_backup() {
 do_rsync() {
     local file=""
     local ret_val=0
-    cat "$include_file" \
-        | while read file; do
-            rsync "$rsync_parameters" --exclude-from="$exclude_file" "$file" "$target_dir" || { 
-                warning_message "Zaloha pro soubor '$file' skoncila s chybou"
-                ret_val=1
-            }
-        done
+    while read file; do
+        rsync "$rsync_parameters" --exclude-from="$exclude_file" "$file" "$target_dir" || {
+            warning_message "Zaloha pro soubor '$file' skoncila s chybou"
+            ret_val=1
+        }
+    done < "$include_file"
     return "$ret_val"
 }
 
