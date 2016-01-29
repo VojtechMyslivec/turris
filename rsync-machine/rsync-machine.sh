@@ -26,10 +26,17 @@ readonly                    backup_dir="/media/nas/vojta/tuxbook"
 readonly                    dir_prefix="$HOSTNAME"
 readonly                    target_dir="$backup_dir/$dir_prefix"
 
+# count urcuje stav zaloh
+# stavy:
+#       0       pripraveno k archivaci
+#       1       provadi se full backup
+#       n       inkrementalni zaloha n-1
+# tato vychozi hodnota bude prepsana
+current_count=0
+# increment count nastavuje pocet moznych stavu.
+# !!! musi byt minimalne 2 !!! viz vyse mozne stavy !!!!!!!!!!!!!!!!!!!!
 readonly               increment_count=14
 readonly             full_backup_count=4
-# vychozi hodnota, bude prepsana
-current_count=0
 
 readonly USAGE="USAGE
 
@@ -267,6 +274,8 @@ main() {
         # je nutne hned zmenit current count v souboru, jinak by po selhani
         #    teto iterace znovu doslo k archivaci
         write_current_count
+        # nastavi count na 1 -- provadi se full backup
+        count=1
     }
 
     # vytvori adresar pro zalohu, bude-li treba
@@ -278,8 +287,8 @@ main() {
     do_rsync && {
         write_current_count
 
-        # pokud je current_count 0, smaze stare zalohy
-        if [ "$current_count" -eq 0 ]; then
+        # pokud je current_count 1, provedla se uspesne prvni full backup
+        if [ "$current_count" -eq 1 ]; then
             write_full_backup_timestamp
             remove_old_backup
         else
