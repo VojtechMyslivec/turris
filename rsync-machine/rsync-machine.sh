@@ -19,6 +19,7 @@ readonly                  settings_dir="/etc/opt/rsync-machine"
 readonly                  include_file="$settings_dir/include.txt"
 readonly                  exclude_file="$settings_dir/exclude.txt"
 readonly            current_count_file="$settings_dir/count"
+readonly                 last_run_file="$settings_dir/last_run"
 readonly         last_full_backup_file="$settings_dir/last_full_backup"
 readonly    last_increment_backup_file="$settings_dir/last_increment_backup"
 
@@ -179,7 +180,7 @@ write_current_count() {
 }
 
 # zapise cas aktualni zalohy target_dir do souboru $1
-write_backup_timestamp_to_file() {
+write_timestamp_to_file() {
     local file=$1
     local time=$( date )
 
@@ -188,12 +189,16 @@ write_backup_timestamp_to_file() {
     }
 }
 
+write_run_timestamp() {
+    write_timestamp_to_file "$last_run_file"
+}
+
 write_full_backup_timestamp() {
-    write_backup_timestamp_to_file "$last_full_backup_file"
+    write_timestamp_to_file "$last_full_backup_file"
 }
 
 write_increment_backup_timestamp() {
-    write_backup_timestamp_to_file "$last_increment_backup_file"
+    write_timestamp_to_file "$last_increment_backup_file"
 }
 
 # vrati prvni neexistujici mozne jmeno souboru '$1' s pripadnou prirazenou cislovkou
@@ -265,6 +270,7 @@ do_rsync() {
 # main ------------------------------------------
 main() {
     usage "$@"
+    write_run_timestamp
     check_files
     load_current_count
 
