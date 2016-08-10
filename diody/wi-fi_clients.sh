@@ -17,3 +17,6 @@ for i in $( seq "$ledMin" "$ledMax" ); do
     sleep "$delay"
 done
 
+sleep 30
+/etc/init.d/rainbow restart
+

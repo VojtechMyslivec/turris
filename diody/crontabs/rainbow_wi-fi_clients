@@ -1,4 +1,3 @@
 MAILTO=""
-0-59/2	*	*	*	*	root	/root/diody/wi-fi_clients.sh
-1-59/2	*	*	*	*	root	/etc/init.d/rainbow restart
+*	*	*	*	*	root	/root/diody/wi-fi_clients.sh
 
