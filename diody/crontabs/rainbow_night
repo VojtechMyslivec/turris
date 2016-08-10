@@ -1,0 +1,8 @@
+MAILTO=""
+30	7	*	*	*	root	rainbow intensity 5
+30	9	*	*	*	root	rainbow intensity 4
+30	11	*	*	*	root	rainbow intensity 3
+
+30	17	*	*	*	root	rainbow intensity 4
+30	19	*	*	*	root	rainbow intensity 5
+30	21	*	*	*	root	rainbow intensity 6
