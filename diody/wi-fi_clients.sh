@@ -4,6 +4,7 @@ ledMin=1
 ledMax=5
 ledPrefix=lan
 color="0088FF"
+delay=0.5
 
 client_count=$( iw dev wlan0 station dump | grep '^Station' | wc -l )
 
@@ -13,5 +14,6 @@ for i in $( seq "$ledMin" "$ledMax" ); do
     if [ "$(( i - ledMin ))" -lt "$client_count" ]; then
         rainbow "${ledPrefix}${i}" enable
     fi
+    sleep "$delay"
 done
 
