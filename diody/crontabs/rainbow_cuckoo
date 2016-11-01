@@ -1,3 +1,2 @@
 MAILTO=""
-0	*	*	*	*	root	/root/diody/cron-cuckoo.sh
-
+0   *   *   *   *   root    /root/diody/cron-cuckoo.sh

@@ -1,8 +1,25 @@
 MAILTO=""
-30	7	*	*	*	root	rainbow intensity 5
-30	9	*	*	*	root	rainbow intensity 4
-30	11	*	*	*	root	rainbow intensity 3
-
-30	17	*	*	*	root	rainbow intensity 4
-30	19	*	*	*	root	rainbow intensity 5
-30	21	*	*	*	root	rainbow intensity 6
+*/2  0   *   *   *   root    rainbow intensity 1
+*/2  1   *   *   *   root    rainbow intensity 1
+*/2  2   *   *   *   root    rainbow intensity 1
+*/2  3   *   *   *   root    rainbow intensity 1
+*/2  4   *   *   *   root    rainbow intensity 2
+*/2  5   *   *   *   root    rainbow intensity 3
+*/2  6   *   *   *   root    rainbow intensity 3
+*/2  7   *   *   *   root    rainbow intensity 4
+*/2  8   *   *   *   root    rainbow intensity 4
+*/2  9   *   *   *   root    rainbow intensity 5
+*/2  10  *   *   *   root    rainbow intensity 6
+*/2  11  *   *   *   root    rainbow intensity 6
+*/2  12  *   *   *   root    rainbow intensity 6
+*/2  13  *   *   *   root    rainbow intensity 6
+*/2  14  *   *   *   root    rainbow intensity 6
+*/2  15  *   *   *   root    rainbow intensity 5
+*/2  16  *   *   *   root    rainbow intensity 5
+*/2  17  *   *   *   root    rainbow intensity 5
+*/2  18  *   *   *   root    rainbow intensity 4
+*/2  19  *   *   *   root    rainbow intensity 4
+*/2  20  *   *   *   root    rainbow intensity 3
+*/2  21  *   *   *   root    rainbow intensity 2
+*/2  22  *   *   *   root    rainbow intensity 1
+*/2  23  *   *   *   root    rainbow intensity 1
