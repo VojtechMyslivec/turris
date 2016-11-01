@@ -1,5 +1,5 @@
 #!/bin/sh
 
 cd /root/diody
-./killer-feature.py *.binmask &
+./killer-feature.py turris/*.binmask &
 
