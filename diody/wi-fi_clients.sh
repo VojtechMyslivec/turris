@@ -1,7 +1,7 @@
 #!/bin/sh
 # e.g. lan1-lan5
-ledMin=1
-ledMax=5
+ledMin=0
+ledMax=4
 ledPrefix=lan
 color="0088FF"
 color_off="FF2200"

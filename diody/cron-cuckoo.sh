@@ -1,5 +1,4 @@
 #!/bin/sh
 
-cd /root/diody
-./killer-feature.py turris/*.binmask &
-
+cd "$( dirname "$0" )"
+./killer-feature.py omnia/*.binmask &
