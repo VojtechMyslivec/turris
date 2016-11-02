@@ -7,7 +7,7 @@ color="0088FF"
 color_off="FF2200"
 delay=0.5
 
-client_count=$( iw dev wlan0 station dump | grep '^Station' | wc -l )
+client_count=$( iw dev wlan0 station dump | grep -c '^Station' )
 
 rainbow "$ledPrefix" "$color" disable
 for i in $( seq "$ledMin" "$ledMax" ); do
