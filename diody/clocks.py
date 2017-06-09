@@ -44,7 +44,7 @@ for i in range( 0, hours ):
 i = hours
 
 # count the shade of minute led
-color_minute = minutes * 0xFFFFFF / 60
+color_minute = round(minutes*0xFF/60)*0x010101
 
 # apply the color and enable the last led
 binmask += binmask_of_led(i)
