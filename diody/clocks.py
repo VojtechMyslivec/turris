@@ -43,16 +43,8 @@ for i in range( 0, hours ):
 # another led for hours
 i = hours
 
-# assign next color in sequence
-color_minute = color_of_led(i)
-# convert to int
-color_minute = int( color_minute, 16 )
-
 # count the shade of minute led
-mask = minutes * 0xFFFFFF / 60
-
-# apply the shade to the color
-color_minute = color_minute & mask
+color_minute = minutes * 0xFFFFFF / 60
 
 # apply the color and enable the last led
 binmask += binmask_of_led(i)
