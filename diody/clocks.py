@@ -1,6 +1,10 @@
 #!/usr/bin/python
 # Script to show current clocks on Turris Omnia
 #
+# Turns on as many LEDs as number of hours in 12-hour format with defined
+# colors. And turn on one more with 'grey' color representing number of minutes
+# in current hour.
+#
 # author:       Vojtech Myslivec <vojtech@xmyslivec.cz>
 #
 
