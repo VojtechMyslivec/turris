@@ -4,7 +4,7 @@
 # author: Vojtech Myslivec <vojtech@xmyslivec.cz>
 # inspired by:
 #  - CZ.NIC, z.s.p.o. [https://www.turris.cz/doc/navody/nastaveni_led_diod]
-#  - Petr Holeček [http://www.ryu.cz/hardware/router-turris-ovladani-rgb-led/]
+#  - Petr Holecek [~~http://www.ryu.cz/hardware/router-turris-ovladani-rgb-led/~~ gone]
 #
 
 import sys
