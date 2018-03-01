@@ -1,5 +1,4 @@
-#!/bin/sh
-## POSIX shell script OMG!
+#!/bin/bash
 
 USAGE="USAGE
     $0 -h
@@ -43,6 +42,11 @@ EXAMPLES
         ./killer-feature_wrapper.sh 1 0 inf 10 diody/killer-feature.py diody/omnia/40-had.binmask diody/omnia/50-ping-pong.binmask
 
         ./killer-feature_wrapper.sh 1 0 inf 10 diody/omnia/15-tetris.binmask diody/omnia/30-rostouci.binmask"
+
+cleanup() {
+    /etc/init.d/rainbow restart
+    exit
+}
 
 error() {
     echo "$*" >&2
@@ -112,6 +116,8 @@ for arg; do
         exit 1
     }
 done
+
+trap cleanup INT TERM
 
 i=0
 while [ "$cycle" = 'inf' ] || [ "$i" -lt "$cycle" ]; do
