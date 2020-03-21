@@ -89,9 +89,9 @@ if [ -n "$SMARTD_MAILER" ]; then
 else
     # Use default Turris notification
     if [ "$dryrun" == 'true' ]; then
-        echo "create_notification -s error '$SMARTD_FULLMESSAGE' '$SMARTD_FULLMESSAGE'"
+        echo "create_notification -s error '$SMARTD_FULLMESSAGE'"
     else
-        create_notification -s error "$SMARTD_FULLMESSAGE" "$SMARTD_FULLMESSAGE"
+        create_notification -s error "$SMARTD_FULLMESSAGE"
     fi
 
 fi
