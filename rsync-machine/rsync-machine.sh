@@ -12,7 +12,7 @@ readonly SCRIPTDIR=${0%/*}
 # recursive a zachova: links permission and time
 readonly rsync_parameters="-rlpt"
 
-readonly TIMEFORMAT="%m-%d-%Y"
+readonly TIMEFORMAT="%Y-%m-%d"
 readonly DELIMITER="_"
 
 readonly                  settings_dir="/etc/opt/rsync-machine"
